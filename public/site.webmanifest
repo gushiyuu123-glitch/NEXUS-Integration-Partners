@@ -1,0 +1,26 @@
+{
+  "name": "NEXUS Integration Partners",
+  "short_name": "NEXUS",
+  "description": "業務システム導入・データ連携・自動化設計を通じて、企業の情報とプロセスを現場で使えるかたちに整えるITパートナー。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FBFC",
+  "theme_color": "#0B1F2A",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
