@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "IBM Plex Sans JP", sans-serif;
+  color: #14242d;
+  background: #f7fafc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f7fafc;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at 84% 10%,
+      rgba(70, 199, 216, 0.12),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 68% 76%,
+      rgba(122, 220, 191, 0.09),
+      transparent 36%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7fafc 44%,
+      #eef6f8 100%
+    );
+
+  color: #14242d;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(70, 199, 216, 0.24);
+  color: #0b1f2a;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(70, 199, 216, 0.72);
+  outline-offset: 4px;
+}
+
+@layer components {
+  .nexus-frame {
+    width: min(calc(100% - 2rem), 1320px);
+    margin-inline: auto;
+  }
+
+  .nexus-frame-sm {
+    width: min(calc(100% - 2rem), 1120px);
+    margin-inline: auto;
+  }
+
+  .nexus-frame-wide {
+    width: min(calc(100% - 2rem), 1440px);
+    margin-inline: auto;
+  }
+
+  .nexus-section {
+    padding-block: 6rem;
+  }
+
+  .nexus-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nexus-label::before {
+    content: "";
+    width: 1.75rem;
+    height: 1px;
+    background: rgba(70, 199, 216, 0.9);
+  }
+
+  @media (min-width: 768px) {
+    .nexus-frame {
+      width: min(calc(100% - 5rem), 1320px);
+    }
+
+    .nexus-frame-sm {
+      width: min(calc(100% - 5rem), 1120px);
+    }
+
+    .nexus-frame-wide {
+      width: min(calc(100% - 5rem), 1440px);
+    }
+
+    .nexus-section {
+      padding-block: 8rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .nexus-frame {
+      width: min(calc(100% - 8rem), 1320px);
+    }
+
+    .nexus-frame-sm {
+      width: min(calc(100% - 8rem), 1120px);
+    }
+
+    .nexus-frame-wide {
+      width: min(calc(100% - 8rem), 1440px);
+    }
+
+    .nexus-section {
+      padding-block: 9rem;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
