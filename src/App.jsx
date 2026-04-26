@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react"
+
 import Header from "./components/Header"
 import HeaderSp from "./components/HeaderSp"
 import FloatingRequest from "./components/FloatingRequest"
@@ -26,50 +28,84 @@ import ContactSp from "./sections/ContactSp"
 import Footer from "./sections/Footer"
 import FooterSp from "./sections/FooterSp"
 
+function useIsSp() {
+  const [isSp, setIsSp] = useState(() => {
+    if (typeof window === "undefined") return false
+    return window.matchMedia("(max-width: 767px)").matches
+  })
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)")
+
+    const handleChange = () => {
+      setIsSp(media.matches)
+    }
+
+    handleChange()
+    media.addEventListener("change", handleChange)
+
+    return () => {
+      media.removeEventListener("change", handleChange)
+    }
+  }, [])
+
+  return isSp
+}
+
+function PcLayout() {
+  return (
+    <>
+      <Header />
+
+      <main id="main-content">
+        <Hero />
+        <FlowBand />
+        <Problem />
+        <Concept />
+        <Service />
+        <UseCases />
+        <Strength />
+        <Process />
+        <FAQ />
+        <Contact />
+      </main>
+
+      <Footer />
+      <FloatingRequest />
+    </>
+  )
+}
+
+function SpLayout() {
+  return (
+    <>
+      <HeaderSp />
+
+      <main id="main-content">
+        <HeroSp />
+        <FlowBandSp />
+        <ProblemSp />
+        <ConceptSp />
+        <ServiceSp />
+        <UseCasesSp />
+        <StrengthSp />
+        <ProcessSp />
+        <FAQSp />
+        <ContactSp />
+      </main>
+
+      <FooterSp />
+      <FloatingRequestSp />
+    </>
+  )
+}
+
 export default function App() {
+  const isSp = useIsSp()
+
   return (
     <div className="min-h-screen bg-nexus-bg text-nexus-ink">
-      {/* PC */}
-      <div className="hidden md:block">
-        <Header />
-
-        <main id="main-content">
-          <Hero />
-          <FlowBand />
-          <Problem />
-          <Concept />
-          <Service />
-          <UseCases />
-          <Strength />
-          <Process />
-          <FAQ />
-          <Contact />
-        </main>
-
-        <Footer />
-        <FloatingRequest />
-      </div>
-
-      {/* SP */}
-      <div className="md:hidden">
-        <HeaderSp />
-
-        <main id="main-content-sp">
-          <HeroSp />
-          <FlowBandSp />
-          <ProblemSp />
-          <ConceptSp />
-          <ServiceSp />
-          <UseCasesSp />
-          <StrengthSp />
-          <ProcessSp />
-          <FAQSp />
-          <ContactSp />
-        </main>
-
-        <FooterSp />
-        <FloatingRequestSp />
-      </div>
+      {isSp ? <SpLayout /> : <PcLayout />}
     </div>
   )
 }
