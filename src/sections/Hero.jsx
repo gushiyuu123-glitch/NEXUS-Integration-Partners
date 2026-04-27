@@ -472,32 +472,31 @@ export default function Hero() {
 
       <HeroSignalLayer />
 
-      <FadeIn
-        delay={180}
-        duration={1040}
-        y={0}
-        className="absolute right-0 top-0 z-[1] hidden h-full w-[70%] lg:block"
-      >
-        <img
-          src={heroImage}
-          alt=""
-          aria-hidden="true"
-          className="h-full w-full object-cover object-center"
-          style={{
-            opacity: 0.4,
-            filter: "contrast(1.04) brightness(1.045) saturate(0.88)",
-            WebkitMaskImage:
-              "linear-gradient(to left, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.74) 34%, rgba(0,0,0,0.4) 62%, rgba(0,0,0,0.11) 84%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to left, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.74) 34%, rgba(0,0,0,0.4) 62%, rgba(0,0,0,0.11) 84%, transparent 100%)",
-          }}
-        />
-      </FadeIn>
+<FadeIn
+  delay={180}
+  duration={1040}
+  y={0}
+  className="absolute right-[-1.5%] top-0 z-[1] hidden h-full w-[74%] lg:block"
+>
+  <img
+    src={heroImage}
+    alt=""
+    aria-hidden="true"
+    className="h-full w-full object-cover object-center"
+    style={{
+      opacity: 0.62,
+      filter: "contrast(1.08) brightness(0.98) saturate(1.02)",
+      WebkitMaskImage:
+        "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.68) 62%, rgba(0,0,0,0.28) 84%, transparent 100%)",
+      maskImage:
+        "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 36%, rgba(0,0,0,0.68) 62%, rgba(0,0,0,0.28) 84%, transparent 100%)",
+    }}
+  />
+</FadeIn>
 
-      <div className="pointer-events-none absolute left-0 top-0 z-[2] hidden h-full w-[53%] bg-gradient-to-r from-nexus-bg/90 via-nexus-bg/52 to-transparent lg:block" />
+<div className="pointer-events-none absolute left-0 top-0 z-[2] hidden h-full w-[50%] bg-gradient-to-r from-nexus-bg/88 via-nexus-bg/44 to-transparent lg:block" />
 
-      <div className="pointer-events-none absolute right-0 top-0 z-[2] hidden h-full w-[70%] bg-gradient-to-l from-white/[0.01] via-white/[0.03] to-nexus-bg/[0.2] lg:block" />
-
+<div className="pointer-events-none absolute right-0 top-0 z-[2] hidden h-full w-[70%] bg-gradient-to-l from-white/0 via-white/[0.01] to-nexus-bg/[0.08] lg:block" />
       <div className="nexus-frame-wide relative z-20 grid min-h-screen items-center pt-[72px] lg:grid-cols-[0.94fr_1.06fr]">
         <div className="relative px-8 pb-20 pt-10 md:px-12 lg:px-0 lg:translate-x-4 lg:pb-0 lg:pt-0 xl:translate-x-6 2xl:translate-x-8">
           <HeroTitleGuides />
